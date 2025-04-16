@@ -1,17 +1,18 @@
 import java.util.Scanner;
 
 public class Main {
-      public static void main(String[] args) {
+    public static void main(String[] args) {
+        GrafoCreches grafo = new GrafoCreches();
+        LeitorArquivo.carregarArquivo("Projeto\\src\\grafo.txt", grafo);
+
         Menu menu = new Menu();
-        new GrafoCreches();
         Scanner ler = new Scanner(System.in);
-        Byte op = 0;
         boolean status = true;
         do {
             menu.MostrarMenu();
-            op = ler.nextByte();
-            status = menu.escolherOpcao(op);
-        }while(status);
-
+            status = menu.escolherOpcao(ler.nextByte());
+        } while(status);
     }
+
 }
+
